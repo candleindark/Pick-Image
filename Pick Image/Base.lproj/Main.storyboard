@@ -23,7 +23,7 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wbi-SS-n2r">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
-                                    <barButtonItem title="Item" id="Lga-MR-Yk1"/>
+                                    <barButtonItem title="Pick" id="Lga-MR-Yk1"/>
                                 </items>
                             </toolbar>
                         </subviews>
