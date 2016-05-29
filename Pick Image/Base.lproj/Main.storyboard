@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,10 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z5u-dp-erR">
-                                <rect key="frame" x="180" y="138" width="240" height="128"/>
-                            </imageView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wbi-SS-n2r">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wbi-SS-n2r">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
                                     <barButtonItem title="Pick" id="Lga-MR-Yk1">
@@ -30,8 +28,20 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z5u-dp-erR">
+                                <rect key="frame" x="20" y="20" width="560" height="536"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="z5u-dp-erR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="As2-pd-tc7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="z5u-dp-erR" secondAttribute="trailing" id="Ec0-Th-hTJ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Wbi-SS-n2r" secondAttribute="bottom" id="ZkL-Ph-nYz"/>
+                            <constraint firstItem="z5u-dp-erR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ZtU-EZ-xCI"/>
+                            <constraint firstItem="Wbi-SS-n2r" firstAttribute="top" secondItem="z5u-dp-erR" secondAttribute="bottom" id="coJ-5n-Kvg"/>
+                            <constraint firstItem="Wbi-SS-n2r" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="qYR-lp-cUH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Wbi-SS-n2r" secondAttribute="trailing" constant="-20" id="zkZ-u9-YUL"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="imageDisplay" destination="z5u-dp-erR" id="3jv-ue-Uxf"/>
