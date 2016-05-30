@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import MobileCoreServices
 
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-
+    
     @IBOutlet weak var imageDisplay: UIImageView!
     
     override func viewDidLoad() {
@@ -23,5 +24,16 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         presentViewController(imagePicker, animated: true, completion: nil)
     }
     
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        if let mediaType = info[UIImagePickerControllerMediaType] as? String {
+            if mediaType == kUTTypeImage as String {
+                if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+                    imageDisplay.image = image
+                }
+            }
+        }
+        
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
 }
-
