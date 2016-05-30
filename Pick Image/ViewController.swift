@@ -25,12 +25,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        if let mediaType = info[UIImagePickerControllerMediaType] as? String {
-            if mediaType == kUTTypeImage as String {
-                if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-                    imageDisplay.image = image
-                }
-            }
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imageDisplay.image = image
         }
         
         dismissViewControllerAnimated(true, completion: nil)
