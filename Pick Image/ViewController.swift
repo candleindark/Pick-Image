@@ -14,9 +14,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBOutlet weak var imageDisplay: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     
+    let imagePicker = UIImagePickerController()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        imagePicker.delegate = self
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -26,8 +29,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     
     @IBAction func pickAnImage(sender: UIBarButtonItem) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
         if sender == cameraButton {
             imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
         }
