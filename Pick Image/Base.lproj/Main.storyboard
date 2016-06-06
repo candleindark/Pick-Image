@@ -21,7 +21,7 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wbi-SS-n2r">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
-                                    <barButtonItem title="Pick" id="Lga-MR-Yk1">
+                                    <barButtonItem title="Pick Image" id="Lga-MR-Yk1">
                                         <connections>
                                             <action selector="pickAnImage:" destination="BYZ-38-t0r" id="AQl-e2-k41"/>
                                         </connections>
@@ -52,6 +52,7 @@
                     <connections>
                         <outlet property="cameraButton" destination="MEp-7G-XNv" id="G0p-gV-Xdh"/>
                         <outlet property="imageDisplay" destination="z5u-dp-erR" id="3jv-ue-Uxf"/>
+                        <outlet property="pickImageButton" destination="Lga-MR-Yk1" id="7jF-Ht-DVm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
