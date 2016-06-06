@@ -12,6 +12,7 @@ import MobileCoreServices
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @IBOutlet weak var imageDisplay: UIImageView!
+    @IBOutlet weak var pickImageButton: UIBarButtonItem!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     
     let imagePicker = UIImagePickerController()
@@ -25,12 +26,16 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        pickImageButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary)
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
     }
     
     @IBAction func pickAnImage(sender: UIBarButtonItem) {
         if sender == cameraButton {
             imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+        }
+        else {
+            imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
         }
         presentViewController(imagePicker, animated: true, completion: nil)
     }
