@@ -76,9 +76,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomTextField" destination="1kQ-pA-rqv" id="s7V-VC-f7c"/>
                         <outlet property="cameraButton" destination="MEp-7G-XNv" id="G0p-gV-Xdh"/>
                         <outlet property="imageDisplay" destination="z5u-dp-erR" id="3jv-ue-Uxf"/>
                         <outlet property="pickImageButton" destination="Lga-MR-Yk1" id="7jF-Ht-DVm"/>
+                        <outlet property="topTextField" destination="iu7-Jl-teg" id="1Go-kq-FRc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
