@@ -29,7 +29,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         let textAttributes = [NSStrokeColorAttributeName : UIColor.blackColor(),
                               NSForegroundColorAttributeName : UIColor.whiteColor(),
                               NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-                              NSStrokeWidthAttributeName : NSNumber(double: 3.0)]
+                              NSStrokeWidthAttributeName : NSNumber(double: -3.0)]
         topTextField.defaultTextAttributes = textAttributes
         bottomTextField.defaultTextAttributes = textAttributes
         
