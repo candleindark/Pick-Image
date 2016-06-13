@@ -26,6 +26,13 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         topTextField.delegate = textFieldDelegate
         bottomTextField.delegate = textFieldDelegate
         
+        let textAttributes = [NSStrokeColorAttributeName : UIColor.blackColor(),
+                              NSForegroundColorAttributeName : UIColor.whiteColor(),
+                              NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+                              NSStrokeWidthAttributeName : NSNumber(double: 3.0)]
+        topTextField.defaultTextAttributes = textAttributes
+        bottomTextField.defaultTextAttributes = textAttributes
+        
         imagePicker.delegate = self
     }
     
