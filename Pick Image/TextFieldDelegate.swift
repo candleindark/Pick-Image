@@ -6,7 +6,6 @@
 //  Copyright © 2016 Isaac To. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class TextFieldDelegate: NSObject, UITextFieldDelegate {
