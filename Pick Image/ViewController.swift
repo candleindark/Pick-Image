@@ -17,11 +17,15 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     
+    let textFieldDelegate = TextFieldDelegate()
     let imagePicker = UIImagePickerController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        topTextField.delegate = textFieldDelegate
+        bottomTextField.delegate = textFieldDelegate
+        
         imagePicker.delegate = self
     }
     
