@@ -22,16 +22,20 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        topTextField.delegate = textFieldDelegate
-        bottomTextField.delegate = textFieldDelegate
         
         let textAttributes = [NSStrokeColorAttributeName : UIColor.blackColor(),
                               NSForegroundColorAttributeName : UIColor.whiteColor(),
                               NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
                               NSStrokeWidthAttributeName : NSNumber(double: -3.0)]
+        
+        topTextField.attributedPlaceholder = NSAttributedString(string: "TOP", attributes: textAttributes)
+        bottomTextField.attributedPlaceholder = NSAttributedString(string: "BOTTOM", attributes: textAttributes)
+
         topTextField.defaultTextAttributes = textAttributes
         bottomTextField.defaultTextAttributes = textAttributes
+        
+        topTextField.delegate = textFieldDelegate
+        bottomTextField.delegate = textFieldDelegate
         
         imagePicker.delegate = self
     }
