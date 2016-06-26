@@ -19,6 +19,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     let textFieldDelegate = TextFieldDelegate()
     let imagePicker = UIImagePickerController()
+    
+    private var adjustedForKeyboard = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,14 +77,24 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     func subscribeToKeyboardNotifications() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
     }
     
     func unsubscribeFromKeyboardNotifications() {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
     }
     
     func keyboardWillShow(notification: NSNotification) {
-        view.frame.origin.y -= getKeyboardHeight(notification)
+        if !adjustedForKeyboard {
+            view.frame.origin.y -= getKeyboardHeight(notification)
+            adjustedForKeyboard = true
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        view.frame.origin.y += getKeyboardHeight(notification)
+        adjustedForKeyboard = false
     }
     
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
