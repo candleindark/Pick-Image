@@ -101,4 +101,18 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         let keyboardSize = notification.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue    // of CGRect
         return keyboardSize.CGRectValue().height
     }
+    
+    private func generateMemedImage() -> UIImage {
+        // TODO: Hide toolbar and navbar
+        
+        // Render image
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
+        let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        // TODO: Show toolboar and navbar
+        
+        return memedImage
+    }
 }
