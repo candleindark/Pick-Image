@@ -15,6 +15,7 @@
 		6A1760661CFA672A00AD59E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A1760641CFA672A00AD59E5 /* LaunchScreen.storyboard */; };
 		6A1760711CFA672A00AD59E5 /* Pick_ImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1760701CFA672A00AD59E5 /* Pick_ImageTests.swift */; };
 		6A17607C1CFA672A00AD59E5 /* Pick_ImageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A17607B1CFA672A00AD59E5 /* Pick_ImageUITests.swift */; };
+		6ACDB2DD1D28AEF800FB8CF9 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACDB2DC1D28AEF800FB8CF9 /* Meme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		6A1760771CFA672A00AD59E5 /* Pick ImageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pick ImageUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A17607B1CFA672A00AD59E5 /* Pick_ImageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pick_ImageUITests.swift; sourceTree = "<group>"; };
 		6A17607D1CFA672A00AD59E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6ACDB2DC1D28AEF800FB8CF9 /* Meme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				6A1760641CFA672A00AD59E5 /* LaunchScreen.storyboard */,
 				6A1760671CFA672A00AD59E5 /* Info.plist */,
 				6A0E6B131D0E485E00337BC0 /* TextFieldDelegate.swift */,
+				6ACDB2DC1D28AEF800FB8CF9 /* Meme.swift */,
 			);
 			path = "Pick Image";
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A17605E1CFA672A00AD59E5 /* ViewController.swift in Sources */,
+				6ACDB2DD1D28AEF800FB8CF9 /* Meme.swift in Sources */,
 				6A17605C1CFA672A00AD59E5 /* AppDelegate.swift in Sources */,
 				6A0E6B141D0E485E00337BC0 /* TextFieldDelegate.swift in Sources */,
 			);
