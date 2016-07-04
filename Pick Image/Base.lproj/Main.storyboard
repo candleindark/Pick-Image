@@ -89,6 +89,7 @@
                         <outlet property="cameraButton" destination="MEp-7G-XNv" id="G0p-gV-Xdh"/>
                         <outlet property="imageDisplay" destination="z5u-dp-erR" id="3jv-ue-Uxf"/>
                         <outlet property="pickImageButton" destination="Lga-MR-Yk1" id="7jF-Ht-DVm"/>
+                        <outlet property="shareButton" destination="DAo-ly-96c" id="ba4-DS-9Dh"/>
                         <outlet property="topTextField" destination="iu7-Jl-teg" id="1Go-kq-FRc"/>
                     </connections>
                 </viewController>
