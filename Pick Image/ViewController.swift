@@ -70,6 +70,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         presentViewController(imagePicker, animated: true, completion: nil)
     }
     
+    @IBAction private func shareMeme() {
+        
+    }
+    
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imageDisplay.image = image
