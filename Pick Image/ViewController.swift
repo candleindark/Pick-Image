@@ -50,6 +50,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         
         pickImageButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary)
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
+        
+        shareButton.enabled = imageDisplay.image != nil
     }
     
     override func viewWillDisappear(animated: Bool) {
