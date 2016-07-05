@@ -73,6 +73,13 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     @IBAction private func shareMeme() {
         let memedImage = generateMemedImage()
         let activityViewController = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
+        activityViewController.completionWithItemsHandler = {
+            activityType, completed, returnedItems, activityError in
+            
+            if completed {
+                self.saveMeme(memedImage)
+            }
+        }
         presentViewController(activityViewController, animated: true, completion: nil)
     }
     
@@ -123,5 +130,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         // TODO: Show toolboar and navbar
         
         return memedImage
+    }
+    
+    private func saveMeme(memedImage: UIImage) {
+        let savedMeme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: imageDisplay.image!, memedImage: memedImage)
     }
 }
