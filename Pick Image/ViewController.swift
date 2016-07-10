@@ -11,6 +11,7 @@ import MobileCoreServices
 
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
+    @IBOutlet private weak var memeDisplay: UIView!
     @IBOutlet weak var imageDisplay: UIImageView!
     @IBOutlet weak var pickImageButton: UIBarButtonItem!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
@@ -122,8 +123,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         // TODO: Hide toolbar and navbar
         
         // Render image
-        UIGraphicsBeginImageContext(self.view.frame.size)
-        view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
+        UIGraphicsBeginImageContext(memeDisplay.frame.size)
+        memeDisplay.drawViewHierarchyInRect(CGRect(origin: CGPoint(x: 0.0, y: 0.0), size: memeDisplay.frame.size), afterScreenUpdates: true)
         let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
