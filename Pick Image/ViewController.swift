@@ -103,13 +103,32 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     
     func keyboardWillShow(notification: NSNotification) {
-        if !adjustedForKeyboard {
-            view.frame.origin.y -= getKeyboardHeight(notification)
-            adjustedForKeyboard = true
+        
+        let isCurrentAppKeyboard = notification.userInfo![UIKeyboardIsLocalUserInfoKey] as! NSNumber
+        
+        if isCurrentAppKeyboard.boolValue {
+            if bottomTextField.isFirstResponder() {
+                if !adjustedForKeyboard {
+                    view.frame.origin.y -= getKeyboardHeight(notification)
+                    adjustedForKeyboard = true
+                }
+            } else {
+                if adjustedForKeyboard {
+                    adjustForKeyboardRemoval(notification)
+                }
+            }
         }
     }
     
     func keyboardWillHide(notification: NSNotification) {
+        let isCurrentAppKeyboard = notification.userInfo![UIKeyboardIsLocalUserInfoKey] as! NSNumber
+        
+        if isCurrentAppKeyboard.boolValue && adjustedForKeyboard {
+            adjustForKeyboardRemoval(notification)
+        }
+    }
+    
+    func adjustForKeyboardRemoval(notification: NSNotification) {
         view.frame.origin.y += getKeyboardHeight(notification)
         adjustedForKeyboard = false
     }
