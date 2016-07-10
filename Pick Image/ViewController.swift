@@ -120,15 +120,11 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     
     private func generateMemedImage() -> UIImage {
-        // TODO: Hide toolbar and navbar
-        
         // Render image
         UIGraphicsBeginImageContext(memeDisplay.frame.size)
         memeDisplay.drawViewHierarchyInRect(CGRect(origin: CGPoint(x: 0.0, y: 0.0), size: memeDisplay.frame.size), afterScreenUpdates: true)
         let memedImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        
-        // TODO: Show toolboar and navbar
         
         return memedImage
     }
